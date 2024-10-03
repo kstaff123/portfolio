@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url('plastic.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  position: relative;
+}
+
+.film-grain {
+  position: fixed;
+  top: -100%;
+  left: -50%;
+  width: 300%;
+  height: 300%;
+  pointer-events: none;
+  background: url('film-grain.png') repeat;
+  opacity: .28;
+  animation: grain 10s steps(8) infinite;
+  z-index: 1000;
+}
+
+@keyframes grain {
+  0%, 100% {
+      transform: translate(0, 0);
+  }
+  10% {
+      transform: translate(-5%, -5%);
+  }
+  20% {
+      transform: translate(5%, 5%);
+  }
+  30% {
+      transform: translate(-10%, 10%);
+  }
+  40% {
+      transform: translate(10%, -10%);
+  }
+  50% {
+      transform: translate(-15%, 15%);
+  }
+  60% {
+      transform: translate(15%, -15%);
+  }
+  70% {
+      transform: translate(-20%, 20%);
+  }
+  80% {
+      transform: translate(20%, -20%);
+  }
+  90% {
+      transform: translate(-25%, 25%);
+  }
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  margin-bottom: 20px;
+}
+
+.profile-details {
+  max-width: 600px;
+}
+
+.profile-details h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.profile-details .bio {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.contact-info {
+  text-align: middle;
+}
+
+.contact-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.contact-info ul li a {
+  color: #e6e600;
+  text-decoration: none;
+}
+
+.contact-info ul li a:hover {
+  text-decoration: underline;
+}
+a {
+  color: #e6e600;
+  text-decoration: none;
+}

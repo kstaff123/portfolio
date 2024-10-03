@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url('plastic.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Roboto Slab', serif; 
+  position: relative;
+}
+
+.film-grain {
+  position: fixed;
+  top: -100%;
+  left: -50%;
+  width: 300%;
+  height: 300%;
+  pointer-events: none;
+  background: url('film-grain.png') repeat;
+  opacity: .28;
+  animation: grain 10s steps(8) infinite;
+  z-index: 1000;
+}
+
+  @keyframes grain {
+0%, 100% { transform:translate(0, 0) }
+10% { transform:translate(-5%, -10%) }
+20% { transform:translate(-15%, 5%) }
+30% { transform:translate(7%, -25%) }
+40% { transform:translate(-5%, 25%) }
+50% { transform:translate(-15%, 10%) }
+60% { transform:translate(15%, 0%) }
+70% { transform:translate(0%, 15%) }
+80% { transform:translate(1%, 25%) }
+90% { transform:translate(-10%, 10%) }
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.text-list h2 {
+  font-weight: 200;
+}
+
+
+.text-list {
+  position: absolute;
+  left: 5%;
+}
+
+.text-list h2 {
+  color: #e6e600; 
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.text-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text-list ul li {
+  font-size: 0.95em;
+  color: #aaa; 
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 200; 
+}
+
+.text-list ul li.highlight {
+  color: #fff;
+}
+
+.text-list ul li.highlight a {
+  color: #fff; 
+}
+
+.text-list ul li a {
+  text-decoration: none; 
+  color: inherit; 
+  transition: color 0.3s ease; 
+}
+
+.text-list ul li a:hover {
+  color: #fff; 
+}
+
+.text-list ul li a:focus {
+  outline: none; 
+}
+
+
+.carousel-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 384px;  
+  height: 576px;  
+  transition: transform 0.8s ease, width 0.5s ease, height 0.5s ease;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, .1); 
+  cursor: pointer;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease; 
+  pointer-events: none;
+}
+
+
+
+@media (max-width: 1920px) {
+  .main-container {
+    padding: 30px;
+  }
+
+  .text-list h2 {
+    font-size: 1em;
+  }
+
+  .text-list ul li {
+    font-size: 0.85em;
+  }
+
+  .carousel-item {
+    width: 300px;
+    height: 450px;
+  }
+}
+@media (max-height: 100px) {
+  .main-container {
+    padding: 30px;
+  }
+
+  .text-list h2 {
+    font-size: 1em;
+  }
+
+  .text-list ul li {
+    font-size: 0.85em;
+  }
+
+  .carousel-item {
+    width: 300px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .text-list {
+    position: relative;
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+  .carousel-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-item {
+    width: 250px;
+    height: 375px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .text-list h2 {
+    font-size: 0.9em;
+  }
+
+  .text-list ul li {
+    font-size: 0.75em;
+  }
+
+  .carousel-item {
+    width: 200px;
+    height: 300px;
+    
+  }
+}

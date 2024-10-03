@@ -4,10 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/effects.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: url('plastic.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Roboto Slab', serif;
+            position: relative; 
+        }
+
+        .film-grain {
+            position: fixed;
+            top: -100%;
+            left: -50%;
+            width: 300%;
+            height: 300%;
+            pointer-events: none; 
+            background: url('film-grain.png') repeat;
+            opacity: .28; 
+            animation: grain 10s steps(8) infinite; 
+            z-index: 1000;
+        }
+
+            @keyframes grain {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-15%, 5%) }
+    30% { transform:translate(7%, -25%) }
+    40% { transform:translate(-5%, 25%) }
+    50% { transform:translate(-15%, 10%) }
+    60% { transform:translate(15%, 0%) }
+    70% { transform:translate(0%, 15%) }
+    80% { transform:translate(1%, 25%) }
+    90% { transform:translate(-10%, 10%) }
+    }
+    </style>
 </head>
 <body>
 
-    <h1><a href="/about.html">About Me</a></h1>
+    <!-- <h1><a href="/about.html">About Me</a></h1>
     <h1>Assignments</h1>
     <ul>
         <li>
@@ -32,6 +75,25 @@
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ol> -->
+    
+    <div class="main-container">
+        <div class="carousel-container">
+            <div class="carousel-item" data-index="7" data-url="/underconstruction.html"><img src="assignment.png" alt="Assignment"></div>
+            <div class="carousel-item" data-index="5" data-url="/about.html"><img src="me.png" alt="About Me"></div>
+            <div class="carousel-item" data-index="3" data-url="/interestingwebsitelist.html"><img src="interestingwebsite.png" alt="Interesting Websites"></div>
+        </div>
+        <div class="text-list">
+          <h2 class="selected-text">Kaige Stafford</h2>
+          <ul>
+            <li data-index="5"><a href="/about.html">about me</a></li>
+            <li data-index="3"><a href="/interestingwebsitelist.html">interesting websites</a></li>
+            <li data-index="7"><a href="/underconstruction.html">assignments</a></li>
+          </ul>
+        </div>
+    </div>
+    
+    <div class="film-grain"></div>
+      
 </body>
 </html>
