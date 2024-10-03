@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Add click event listeners to carousel items
+
     carouselItems.forEach((carouselItem) => {
       carouselItem.addEventListener('click', () => {
         const url = carouselItem.getAttribute('data-url');
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
   
-      // Add hover event listeners to change image source
+
       const img = carouselItem.querySelector('img');
       const hoverImg = document.createElement('img');
       hoverImg.src = img.src.replace('.png', 'after.png');
