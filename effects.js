@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function updatePosition(item, newIndex) {
+      const scaleFactor = window.innerWidth / 1920; // Assuming 1920px is the base width
+    
       if (newIndex === 7) {
-        item.style.transform = 'translate(-400px, 200px)';
+        item.style.transform = `translate(${-400 * scaleFactor}px, ${200 * scaleFactor}px)`;
       } else if (newIndex === 5) {
         item.style.transform = 'translate(0, 0)';
       } else if (newIndex === 3) {
-        item.style.transform = 'translate(400px, -200px)';
+        item.style.transform = `translate(${400 * scaleFactor}px, ${-200 * scaleFactor}px)`;
       }
     }
   
